@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Тёпа Кликер</title>
+    <link rel="shortcut icon" href="./images/logo.png" type="image/x-icon">
+    <link rel="stylesheet" href="./styles/style.css">
+    <link rel="manifest" href="./manifest.json">
+</head>
+<body>
+    <div class="boxes">
+        <div class="animbox">
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+    </div>
+    <button onclick="magaz.showModal()">Магазин Тёпы</button>
+    <br>
+    <button onclick="resetGame()" id="resetGame">Начать Сначала</button>
+    <br>
+    <button class="volume_button" onclick="volume_on()" id="volume">🔊</button>
+    <div class="score">
+        <h2>0</h2>
+        <img src="./images/d_cash_currency_money_business_coin_finance_ruble_icon_250919.ico" alt="Монета" class="score_coin">
+    </div>
+    <div class="main">
+        <div class="element_center">
+            <div class="click_element" onclick="money_message()">
+                <img src="./images/tepa.png" alt="Тёпа" id="img_clicker">
+            </div>
+        </div>
+    </div>
+    <!-- Сообщения -->
+    <div class="message">
+        <img src="./images/d_cash_currency_money_business_coin_finance_ruble_icon_250919.ico" alt="Монета">
+        <h3>0</h3>
+        <button onclick="close_message()">x</button>
+    </div>
+    <div class="buy_mess">
+        <h3>Успешно <br>Куплено</h3>
+        <button onclick="close_buy_mess()">x</button>
+    </div>
+    <div class="buy_fail">
+        <h3>Недостаточно <br>Монет</h3>
+        <button onclick="close_fail_mess()">x</button>
+    </div>
+    <div class="select_tepa">
+        <h3>Тёпа Выбран</h3>
+        <button onclick="close_select_tepa()">x</button>
+    </div>
+    <!-- Сообщения -->
+    <!-- Магазин -->
+    <dialog id="magaz">
+        <button onclick="magaz.close()" class="close_button">x</button>
+        <h1>Магазин Тёпы</h1>
+        <br>
+        <div class="level_click">
+            <h4 class="level">Уровень: 1</h4>
+            <h4 class="level_give">1 Кликов = 1 Монет</h4>
+            <button id="level_up">Улучшить За 100<img src="./images/d_cash_currency_money_business_coin_finance_ruble_icon_250919.ico" alt="Монета"></button>
+        </div>
+        <br>
+        <div class="tovari">
+            <div class="tovar">
+                <img src="./images/tepa.png" alt="Тёпа Значок">
+                <h5>Тип: Персонаж</h5>
+                <h4>Тёпа Значок</h4>
+                <button id="btn_Tepa_Head" onclick="buyItems('Tepa_Head', 0, './images/tepa.png'), magaz.close()">Выбрать</button>
+            </div>
+            <div class="tovar">
+                <img src="./images/Tepa_N_Pelmeni.png" alt="Тёпа Пельмени">
+                <h5>Тип: Персонаж</h5>
+                <h4>Тёпа Кушает<br> Пельмени</h4>
+                <button id="btn_Tepa_Pelmen" onclick="buyItems('Tepa_Pelmen', 100, './images/Tepa_N_Pelmeni.png'), magaz.close()">Купить За 100 <img src="./images/d_cash_currency_money_business_coin_finance_ruble_icon_250919.ico" alt="Монета" class="Money_Price"></button>
+            </div>
+            <div class="tovar">
+                <img src="./images/Tepa_Sok.png" alt="Тёпа Сок">
+                <h5>Тип: Персонаж</h5>
+                <h4>Тёпа На<br> Диванчике</h4>
+                <button id="btn_Tepa_Sok" onclick="buyItems('Tepa_Sok', 250, './images/Tepa_Sok.png'), magaz.close()">Купить За 250 <img src="./images/d_cash_currency_money_business_coin_finance_ruble_icon_250919.ico" alt="Монета" class="Money_Price"></button>
+            </div>
+            <div class="tovar">
+                <img src="./images/Tepa_Car.png" alt="Тёпа Водитель">
+                <h5>Тип: Персонаж</h5>
+                <h4>Тёпа Водитель</h4>
+                <button id="btn_Tepa_Car" onclick="buyItems('Tepa_Car', 500, './images/Tepa_Car.png'), magaz.close()">Купить За 500 <img src="./images/d_cash_currency_money_business_coin_finance_ruble_icon_250919.ico" alt="Монета" class="Money_Price"></button>
+            </div>
+            <div class="tovar">
+                <img src="./images/Tepa_zloy.png" alt="Тёпа Злой">
+                <h5>Тип: Персонаж</h5>
+                <h4>Тёпа С Молотком</h4>
+                <button id="btn_Tepa_Zloy" onclick="buyItems('Tepa_Zloy', 750, './images/Tepa_zloy.png'), magaz.close()">Купить За 750 <img src="./images/d_cash_currency_money_business_coin_finance_ruble_icon_250919.ico" alt="Монета" class="Money_Price"></button>
+            </div>
+            <div class="tovar">
+                <img src="./images/tepa_comp.png" alt="Тёпа За Компом">
+                <h5>Тип: Персонаж</h5>
+                <h4>Тёпа За Компом</h4>
+                <button id="btn_tepa_comp" onclick="buyItems('tepa_comp', 1000, './images/tepa_comp.png'), magaz.close()">Купить За 1000 <img src="./images/d_cash_currency_money_business_coin_finance_ruble_icon_250919.ico" alt="Монета" class="Money_Price"></button>
+            </div>
+            <div class="tovar">
+                <img src="./images/pachan.jpg" alt="Пацан">
+                <h5>Тип: Персонаж</h5>
+                <h4>Пацан</h4>
+                <button id="btn_pachan" onclick="buyItems('pachan', 2500, './images/pachan.jpg'), magaz.close()">Купить За 2500 <img src="./images/d_cash_currency_money_business_coin_finance_ruble_icon_250919.ico" alt="Монета" class="Money_Price"></button>
+            </div>
+            <div class="tovar">
+                <img src="./images/tepa_vzrosli.png" alt="Тёпа Взрослый">
+                <h5>Тип: Персонаж</h5>
+                <h4>Тёпа Взрослый</h4>
+                <button id="btn_tepa_vzrosli" onclick="buyItems('tepa_vzrosli', 5000, './images/tepa_vzrosli.png'), magaz.close()">Купить За 5000 <img src="./images/d_cash_currency_money_business_coin_finance_ruble_icon_250919.ico" alt="Монета" class="Money_Price"></button>
+            </div>
+            <div class="tovar">
+                <img src="./images/tepa_pachan.png" alt="Тёпа Болтает С Пацаном">
+                <h5>Тип: Персонаж</h5>
+                <h4>Тёпа С Пацаном<br>Болтает</h4>
+                <button id="btn_tepa_pachan" onclick="buyItems('tepa_comp', 7500, './images/tepa_pachan.png'), magaz.close()">Купить За 7500 <img src="./images/d_cash_currency_money_business_coin_finance_ruble_icon_250919.ico" alt="Монета" class="Money_Price"></button>
+            </div>
+            <div class="tovar">
+                <img src="./images/docha.jpg" alt="Доча">
+                <h5>Тип: Персонаж</h5>
+                <h4>Доча</h4>
+                <button id="btn_docha" onclick="buyItems('docha', 10000, './images/docha.jpg'), magaz.close()">Купить За 10000 <img src="./images/d_cash_currency_money_business_coin_finance_ruble_icon_250919.ico" alt="Монета" class="Money_Price"></button>
+            </div>
+            <div class="tovar">
+                <img src="./images/chapilg.jpg" alt="Ч1апилг">
+                <h5>Тип: Персонаж</h5>
+                <h4>Ч1апилг</h4>
+                <button id="btn_chapilg" onclick="buyItems('chapilg', 12500, './images/chapilg.jpg'), magaz.close()">Купить За 12500 <img src="./images/d_cash_currency_money_business_coin_finance_ruble_icon_250919.ico" alt="Монета" class="Money_Price"></button>
+            </div>
+            <div class="tovar">
+                <img src="./images/tepa.jpg" alt="Тёпа">
+                <h5>Тип: Персонаж</h5>
+                <h4>Тёпа</h4>
+                <button id="btn_tepa" onclick="buyItems('tepa', 15000, './images/tepa.jpg'), magaz.close()">Купить За 15000 <img src="./images/d_cash_currency_money_business_coin_finance_ruble_icon_250919.ico" alt="Монета" class="Money_Price"></button>
+            </div>
+            <div class="tovar">
+                <img src="./images/banda_ataka.png" alt="Банда В Деле">
+                <h5>Тип: Персонаж</h5>
+                <h4>Банда Кошаков В Деле</h4>
+                <button id="btn_banda_ataka" onclick="buyItems('banda_ataka', 17500, './images/banda_ataka.png'), magaz.close()">Купить За 17500 <img src="./images/d_cash_currency_money_business_coin_finance_ruble_icon_250919.ico" alt="Монета" class="Money_Price"></button>
+            </div>
+            <div class="tovar">
+                <img src="./images/banda_otdix.png" alt="Банда Кошаков В Отпуске">
+                <h5>Тип: Персонаж</h5>
+                <h4>Банда Кошаков<br>В Отпуске</h4>
+                <button id="btn_banda_otdix" onclick="buyItems('banda_otdix', 20000, './images/banda_otdix.png'), magaz.close()">Купить За 20000 <img src="./images/d_cash_currency_money_business_coin_finance_ruble_icon_250919.ico" alt="Монета" class="Money_Price"></button>
+            </div>
+            <div class="tovar">
+                <img src="./images/tepa_sleep.png" alt="Тёпа Спит">
+                <h5>Тип: Персонаж</h5>
+                <h4>Тёпа Спит</h4>
+                <button id="btn_tepa_sleep" onclick="buyItems('tepa_sleep', 22500, './images/tepa_sleep.png'), magaz.close()">Купить За 22500 <img src="./images/d_cash_currency_money_business_coin_finance_ruble_icon_250919.ico" alt="Монета" class="Money_Price"></button>
+            </div>
+            <div class="tovar">
+                <img src="./images/tepa_house.jpg" alt="Тёпа Опять Спит">
+                <h5>Тип: Персонаж</h5>
+                <h4>Тёпа Опять<br>Спит</h4>
+                <button id="btn_tepa_house" onclick="buyItems('tepa_house', 25000, './images/tepa_house.png'), magaz.close()">Купить За 25000 <img src="./images/d_cash_currency_money_business_coin_finance_ruble_icon_250919.ico" alt="Монета" class="Money_Price"></button>
+            </div>
+            <div class="tovar">
+                <img src="./images/banda_konfeti.png" alt="Банда Кошаков С Конфетами">
+                <h5>Тип: Персонаж</h5>
+                <h4>Банда Кошаков<br>С Конфетами</h4>
+                <button id="btn_banda_konfeti" onclick="buyItems('banda_konfeti', 27500, './images/banda_konfeti.png'), magaz.close()">Купить За 27500 <img src="./images/d_cash_currency_money_business_coin_finance_ruble_icon_250919.ico" alt="Монета" class="Money_Price"></button>
+            </div>
+        </div>
+    </dialog>
+    <!-- Магазин -->
+    <script src="./scripts/script.js"></script>
+</body>
+</html>

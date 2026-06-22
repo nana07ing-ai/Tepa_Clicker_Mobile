@@ -1,0 +1,516 @@
+.click_element>img {
+    transition: all 0.3s;
+    border-radius: 10px;
+    width: 200px;
+    margin-top: 10%;
+}
+.click_element:active {
+    animation: click_tepa 1s;
+}
+@keyframes click_tepa {
+    0% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-15px);
+    }
+    100% {
+        transform: translateY(0);
+    }
+}
+.element_center {
+    text-align: center;
+}
+#message_id {
+    background-color: rgba(0, 25, 63, 0.582);
+    display: inline;
+    border-radius: 10px;
+    padding: 20px;
+    transition: all 0.3s;
+    width: 200px;
+    float: right;
+    animation: spawn_message 1s;
+}
+#message_id>img {
+    width: 50px;
+}
+.message {
+    display: none;
+}
+#message_id>h3 {
+    float: right;
+    margin-left: 10px;
+    color: white;
+    font-size: 20px;
+    background-color: var(--theme);
+    padding: 10px;
+    border-radius: 10px;
+    font-family: Arial, Helvetica, sans-serif;
+    transition: all 0.3s;
+}
+body {
+    background-color: var(--body);
+    margin: 0;
+    overflow: hidden;
+}
+:root {
+    --body: rgb(4, 0, 59);
+    --theme: rgba(0, 0, 136, 0.61);
+    --color: rgb(0, 132, 255);
+    --other: rgba(0, 242, 255, 0.3);
+}
+#message_id:hover {
+    border: 1px solid cyan;
+    transform: translateY(-10px);
+    box-shadow: 0 0 40px cyan;
+}
+#message_id>h3:hover {
+    border: 1px solid cyan;
+    box-shadow: 0 0 40px cyan;
+    transform: translateY(-10px);
+}
+@keyframes spawn_message {
+    0% {
+        transform: translateX(100%);
+    }
+}
+.score {
+    color: white;
+    float: right;
+    margin: 10px;
+    background-color: var(--theme);
+    padding: 10px;
+    border-radius: 10px;
+}
+#message_id>button {
+    border-radius: 50%;
+    background-color: rgba(0, 25, 63, 0.582);
+    color: white;
+    width: 25px;
+    font-size: 20px;
+    float: left;
+    font-family: Arial, Helvetica, sans-serif;
+    height: 25px;
+    border: none;
+    border: 1px solid black;
+    transition: all 0.3s;
+}
+#message_id>button:hover {
+    background-color: red;
+    border: none;
+    transform: rotate(-90deg);
+}
+#message_id>button:active {
+    background-color: red;
+    border: none;
+    transform: rotate(-90deg);
+}
+button[onclick="magaz.showModal()"] {
+    margin-top: 10px;
+    background-color: var(--theme);
+    color: white;
+    padding: 10px;
+    border-radius: 10px;
+    border: none;
+    margin-left: 10px;
+}
+dialog {
+    width: 80%;
+    height: 90%;
+    background-color: var(--theme);
+    color: white;
+    border-radius: 10px;
+    border: none;
+    transition: all 0.3s;
+    font-family: Arial, Helvetica, sans-serif;
+    animation: spawn_dialog 1s;
+}
+dialog:hover {
+    border: 1px solid cyan;
+    box-shadow: 0 20px 40px cyan;
+}
+* {
+    font-family: Arial, Helvetica, sans-serif;
+    border: 1px solid transparent;
+}
+dialog>h1 {
+    background-color: rgba(0, 255, 255, 0.565);
+    text-align: center;
+    padding: 10px;
+    border-radius: 10px;
+}
+.close_button {
+    border-radius: 50%;
+    width: 35px;
+    height: 35px;
+    float: right;
+    margin-top: 32px;
+    margin-right: 10px;
+    font-size: 20px;
+    border: none;
+    background-color: rgba(35, 35, 35, 0.732);
+    color: white;
+    border: 1px solid black;
+    transition: all 0.3s;
+}
+.close_button:hover {
+    background-color: red;
+    transform: rotate(-90deg);
+    border: none;
+}
+header {
+    background-color: var(--theme);
+    padding: 10px;
+    
+}
+header>nav>a {
+    text-decoration: none;
+    color: white;
+    border: 1px solid black;
+    padding: 8px;
+    border-radius: 10px;
+}
+@keyframes spawn_dialog {
+    0% {
+        opacity: 0;
+        width: 50%;
+        height: 50%;
+    }
+}
+.animbox div {
+    width: 100px;
+    height: 100px;
+    border: 5px solid var(--theme);
+    animation: animbox 9s infinite;
+    position: absolute;
+    top: 5%;
+    left: 3%;
+    background-color: var(--body);
+    z-index: -99999;
+}
+.animbox div:nth-child(1) {
+    left: 15%;
+    top: 30%;
+    animation: animbox 10s infinite;
+}
+.animbox div:nth-child(2) {
+    left: 50%;
+    top: 30%;
+    animation: animbox 11s infinite;
+}
+.animbox div:nth-child(3) {
+    left: 27%;
+    top: 50%;
+    animation: animbox 8s infinite;
+}
+.animbox div:nth-child(4) {
+    left: 70%;
+    top: 50%;
+    animation: animbox 9s infinite;
+}
+.animbox div:nth-child(5) {
+    left: 50%;
+    top: 65%;
+    animation: animbox 10s infinite;
+}
+@keyframes animbox {
+    0% {
+        transform: rotate(0deg);
+        opacity: 0;
+    }
+    50% {
+        opacity: 1;
+    }
+    55% {
+        opacity: 0;
+    }
+    100% {
+        transform: rotate(-90deg);
+        opacity: 0;
+        border-radius: 100%;
+    }
+}
+.score_coin {
+    width: 50px;
+    float: right;
+    margin: 10px;
+}
+.score>h2 {
+    float: left;
+}
+.volume_button {
+    padding: 10px;
+    font-size: 30px;
+    border-radius: 10px;
+    border: none;
+    margin: 10px;
+    background-color: var(--theme);
+    transition: all 0.3s;
+}
+.volume_button:hover {
+    box-shadow: 0 20px 40px var(--theme);
+    border: 1px solid white;
+}
+.volume_button:active {
+    transform: translateY(-10px);
+}
+.tovar {
+    display: inline-block;
+    border-radius: 10px;
+    margin: 10px;
+    background-color: var(--theme);
+    transition: all 0.3s;
+}
+.tovar>img {
+    border-radius: 10px 10px 0 0;
+    width: 200px;
+}
+.tovar>h4, button {
+    text-align: center;
+}
+.tovar>button {
+    width: 90%;
+    padding: 10px;
+    border-radius: 10px;
+    margin: 10px;
+    background-color: var(--other);
+    border: none;
+    color: white;
+    cursor: pointer;
+    transition: all 0.3s;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.tovar>h4 {
+    background-color: var(--other);
+    padding: 10px;
+    margin: 10px;
+    border-radius: 10px;
+}
+.tovar:hover {
+    box-shadow: 0 20px 40px var(--other);
+    transform: translateY(-10px);
+    border: 1px solid white;
+}
+.tovar>button:hover {
+    transform: translateY(-10px);
+    border: 1px solid white;
+    box-shadow: 0 20px 40px var(--other);
+}
+.Money_Price {
+    width: 25px;
+    transform: translateY(5px);
+}
+.tovar>h5 {
+    background-color: var(--other);
+    padding: 10px;
+    margin: 10px;
+    text-align: center;
+    border-radius: 10px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.buy_mess {
+    display: none;
+}
+#buy_mess_id {
+    display: inline-block;
+    background-color: rgba(0, 25, 63, 0.582);
+    border-radius: 10px;
+    padding: 20px;
+    transition: all 0.3s;
+    width: 200px;
+    animation: good_buy 1s;
+    margin: 10px;
+    transition: all 0.3s;
+}
+#buy_mess_id:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 0 40px cyan;
+    border: 1px solid cyan;
+}
+#buy_mess_id>h3:hover {
+    box-shadow: 0 0 40px cyan;
+    transform: translateY(-10px);
+    border: 1px solid cyan;
+}
+#buy_mess_id>button {
+    background-color: rgba(0, 25, 63, 0.582);
+    color: white;
+    border-radius: 100%;
+    width: 25px;
+    height: 25px;
+    border: 1px solid black;
+    float: left;
+    transition: all 0.3s;
+}
+#buy_mess_id>h3 {
+    color: white;
+    float: right;
+    background-color: green;
+    padding: 10px;
+    border-radius: 10px;
+    transition: all 0.3s;
+}
+#buy_mess_id>button:hover {
+    background-color: red;
+    transform: rotate(-90deg);
+    border: none;
+}
+@keyframes good_buy {
+    0% {
+        transform: translateX(-100%);
+    }
+}
+#buy_mess_id:hover {
+    border: 1px solid cyan;
+    transform: translateY(-10px);
+}
+.buy_fail {
+    display: none;
+}
+#buy_fail_id {
+    display: inline-block;
+    background-color: rgba(0, 25, 63, 0.582);
+    padding: 20px;
+    width: 200px;
+    margin: 10px;
+    transition: all 0.3s;
+    border-radius: 10px;
+    animation: fail_mess 1s;
+}
+#buy_fail_id>h3 {
+    color: white;
+    float: right;
+    background-color: rgba(109, 0, 0, 0.658);
+    padding: 10px;
+    border-radius: 10px;
+    transition: all 0.3s;
+}
+#buy_fail_id>button {
+    background-color: rgba(0, 25, 63, 0.582);
+    border: 1px solid black;
+    border-radius: 100%;
+    width: 25px;
+    height: 25px;
+    float: left;
+    color: white;
+    transition: all 0.3s;
+}
+#buy_fail_id>button:hover {
+    background-color: red;
+    border: none;
+    transform: rotate(-90deg);
+}
+#buy_fail_id:hover {
+    box-shadow: 0 0 40px cyan;
+    transform: translateY(-10px);
+}
+#buy_fail_id>h3:hover {
+    border: 1px solid cyan;
+    transform: translateY(-10px);
+    box-shadow: 0 0 40px cyan;
+}
+@keyframes fail_mess {
+    0% {
+        transform: translateX(-100%);
+    }
+}
+.select_tepa {
+    display: none;
+}
+#select_tepa_id {
+    display: inline-block;
+    width: 200px;
+    background-color: rgba(0, 25, 63, 0.582);
+    border-radius: 10px;
+    padding: 10px;
+    margin: 10px;
+    transition: all 0.3s;
+    animation: fail_mess 1s;
+}
+#select_tepa_id>h3 {
+    color: white;
+    float: right;
+    background-color: green;
+    padding: 10px;
+    border-radius: 10px;
+    transition: all 0.3s;
+}
+#select_tepa_id>button {
+    background-color: rgba(0, 25, 63, 0.582);
+    width: 25px;
+    height: 25px;
+    border-radius: 100%;
+    border: 1px solid black;
+    color: white;
+    transition: all 0.3s;
+}
+#select_tepa_id:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 0 40px cyan;
+    border: 1px solid cyan;
+}
+#select_tepa_id>button:hover {
+    background-color: red;
+    border: none;
+    transform: rotate(-90deg);
+}
+#select_tepa_id>h3:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 0 40px cyan;
+    border: 1px solid cyan;
+}
+#resetGame {
+    background-color: var(--other);
+    color: white;
+    padding: 10px;
+    border-radius: 10px;
+    margin-left: 5px;
+    border: none;
+    margin-top: 5px;
+}
+.level_click {
+    background-color: var(--other);
+    border-radius: 10px;
+    padding: 10px;
+    text-align: center;
+    transition: all 0.3s;
+}
+.level {
+    background-color: var(--theme);
+    padding: 10px;
+    border-radius: 10px;
+    transition: all 0.3s;
+}
+.level_give {
+    background-color: var(--theme);
+    padding: 10px;
+    border-radius: 10px;
+    transition: all 0.3s;
+}
+.level:hover {
+    outline: 1px solid var(--color);
+}
+.level_give:hover {
+    outline: 1px solid var(--color);
+}
+#level_up {
+    background-color: var(--theme);
+    color: white;
+    padding: 10px;
+    border-radius: 10px;
+    width: 100%;
+    font-family: Arial, Helvetica, sans-serif;
+    transition: all 0.3s;
+}
+#level_up>img {
+    width: 25px;
+    transform: translateY(7px);
+    margin-left: 2px;
+}
+#level_up:hover {
+    outline: 1px solid var(--color);
+}
+.level_click:hover {
+    transform: translateY(-5px);
+    outline: 1px solid var(--color);
+}
