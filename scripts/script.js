@@ -200,3 +200,7 @@ function checkstatus() {
     })
 }   
 checkstatus();
+
+document.getElementById('razrabi').addEventListener('click', function() {
+    alert('Разработчики: AdaM Taulu, Abdullah_Windows7');
+});
