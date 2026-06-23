@@ -202,5 +202,5 @@ function checkstatus() {
 checkstatus();
 
 document.getElementById('razrabi').addEventListener('click', function() {
-    alert('Разработчики: AdaM Taulu, Abdullah_Windows7');
+    alert('Разработчики: AdaM Taulu, Abdullah_Windows7. Спонсоры: Аминов Абдурахман, Алимзода Мухаммад.');
 });
