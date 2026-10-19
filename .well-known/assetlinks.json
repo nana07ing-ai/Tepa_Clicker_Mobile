@@ -1,0 +1,8 @@
+[{
+      "relation": ["delegate_permission/common.handle_all_urls"],
+      "target": {
+        "namespace": "android_app",
+        "package_name": "io.github.nana07ing_ai.twa",
+        "sha256_cert_fingerprints": ["B9:38:CE:17:C8:88:38:56:49:23:B4:FA:F3:9A:1A:3F:89:1B:63:A2:4B:A9:37:49:DF:19:D3:43:BF:82:AD:19"]
+      }
+    }]
