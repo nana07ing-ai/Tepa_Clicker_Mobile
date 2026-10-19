@@ -1,5 +1,21 @@
 {
-    "name": "Тёпа Кликер",
-    "version": "1.0.8",
-    "display": "standalone"
+  "short_name": "TepaClicker",
+  "name": "Tepa_Clicker_Mobile",
+  "description": "Тёпа Кликер! Крутая игра где можно улучшать клики и покупать котов!",
+  "icons": [
+    {
+      "src": "./images/logo.png",
+      "type": "image/png",
+      "sizes": "192x192",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "./images/logo.png",
+      "type": "image/png",
+      "sizes": "512x512",
+      "purpose": "any maskable"
+    }
+  ],
+  "start_url": "./index.html",
+  "display": "standalone"
 }
